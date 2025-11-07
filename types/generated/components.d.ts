@@ -21,7 +21,11 @@ export interface SectionsCtaSection extends Struct.ComponentSchema {
   info: {
     displayName: 'CTASection';
   };
-  attributes: {};
+  attributes: {
+    card: Schema.Attribute.Component<'shared.card', false>;
+    image: Schema.Attribute.Component<'shared.media', false>;
+    link: Schema.Attribute.String;
+  };
 }
 
 export interface SectionsGallerySection extends Struct.ComponentSchema {
@@ -29,7 +33,10 @@ export interface SectionsGallerySection extends Struct.ComponentSchema {
   info: {
     displayName: 'GallerySection';
   };
-  attributes: {};
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
 }
 
 export interface SectionsHeroSection extends Struct.ComponentSchema {
@@ -38,11 +45,9 @@ export interface SectionsHeroSection extends Struct.ComponentSchema {
     displayName: 'HeroSection';
   };
   attributes: {
-    backgroundImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
     button: Schema.Attribute.Component<'shared.button', false>;
     description: Schema.Attribute.Text;
+    image: Schema.Attribute.Component<'shared.media', false>;
     title: Schema.Attribute.String;
   };
 }
@@ -52,7 +57,11 @@ export interface SectionsSegmentsSection extends Struct.ComponentSchema {
   info: {
     displayName: 'SegmentsSection';
   };
-  attributes: {};
+  attributes: {
+    cards: Schema.Attribute.Component<'shared.card', true>;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
 }
 
 export interface SectionsSliderSection extends Struct.ComponentSchema {
@@ -60,7 +69,11 @@ export interface SectionsSliderSection extends Struct.ComponentSchema {
   info: {
     displayName: 'SliderSection';
   };
-  attributes: {};
+  attributes: {
+    cards: Schema.Attribute.Component<'shared.card', true>;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
 }
 
 export interface SectionsTeachingSection extends Struct.ComponentSchema {
@@ -68,7 +81,11 @@ export interface SectionsTeachingSection extends Struct.ComponentSchema {
   info: {
     displayName: 'TeachingSection';
   };
-  attributes: {};
+  attributes: {
+    cards: Schema.Attribute.Component<'shared.card', true>;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
 }
 
 export interface SectionsTestimonialSection extends Struct.ComponentSchema {
@@ -91,6 +108,20 @@ export interface SharedButton extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_cards';
+  info: {
+    displayName: 'Card';
+    icon: 'crown';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
+    description: Schema.Attribute.Blocks;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -98,7 +129,9 @@ export interface SharedMedia extends Struct.ComponentSchema {
     icon: 'file-video';
   };
   attributes: {
-    file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    desktop: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    mobile: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    tablet: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -166,6 +199,7 @@ declare module '@strapi/strapi' {
       'sections.teaching-section': SectionsTeachingSection;
       'sections.testimonial-section': SectionsTestimonialSection;
       'shared.button': SharedButton;
+      'shared.card': SharedCard;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

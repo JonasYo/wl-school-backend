@@ -4,6 +4,20 @@
     "displayName": "CTASection"
   },
   "options": {},
-  "attributes": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    },
+    "image": {
+      "type": "component",
+      "component": "shared.media",
+      "repeatable": false
+    },
+    "card": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": false
+    }
+  },
   "config": {}
 }

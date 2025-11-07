@@ -4,6 +4,18 @@
     "displayName": "SliderSection"
   },
   "options": {},
-  "attributes": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cards": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": true
+    }
+  },
   "config": {}
 }
