@@ -35,6 +35,10 @@ export interface SectionsGallerySection extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     title: Schema.Attribute.String;
   };
 }
@@ -122,6 +126,33 @@ export interface SharedCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFooter extends Struct.ComponentSchema {
+  collectionName: 'components_shared_footers';
+  info: {
+    displayName: 'Footer';
+    icon: 'collapse';
+  };
+  attributes: {
+    cnpj: Schema.Attribute.String;
+    copyrightText: Schema.Attribute.Text;
+    description: Schema.Attribute.String;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    pages: Schema.Attribute.Component<'shared.button', true>;
+  };
+}
+
+export interface SharedHeader extends Struct.ComponentSchema {
+  collectionName: 'components_shared_headers';
+  info: {
+    displayName: 'Header';
+    icon: 'bold';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -200,6 +231,8 @@ declare module '@strapi/strapi' {
       'sections.testimonial-section': SectionsTestimonialSection;
       'shared.button': SharedButton;
       'shared.card': SharedCard;
+      'shared.footer': SharedFooter;
+      'shared.header': SharedHeader;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

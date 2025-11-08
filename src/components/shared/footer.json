@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_footers",
+  "info": {
+    "displayName": "Footer",
+    "icon": "collapse"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "pages": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": true
+    },
+    "copyrightText": {
+      "type": "text"
+    },
+    "cnpj": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
