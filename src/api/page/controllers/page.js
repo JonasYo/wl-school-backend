@@ -92,6 +92,19 @@ module.exports = createCoreController('api::page.page', ({ strapi }) => ({
                 shareImage: true,
               },
             },
+            header: {
+              populate: {
+                logo: true,
+                button: true,
+              },
+            },
+            footer: {
+              populate: {
+                logo: true,
+                pages: true,
+              },
+            },
+            whatsappContact: true,
             favicon: true,
           },
         },
