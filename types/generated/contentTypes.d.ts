@@ -484,6 +484,8 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
     favicon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    footer: Schema.Attribute.Component<'shared.footer', false>;
+    header: Schema.Attribute.Component<'shared.header', false>;
     isActive: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::site.site'> &
@@ -496,6 +498,10 @@ export interface ApiSiteSite extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    whatsappContact: Schema.Attribute.Component<
+      'shared.whatsapp-contact',
+      false
+    >;
   };
 }
 

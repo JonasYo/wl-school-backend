@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_whatsapp_contacts",
+  "info": {
+    "displayName": "Whatsapp Contact",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "phoneNumber": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

@@ -40,6 +40,21 @@
     },
     "maintenanceMode": {
       "type": "boolean"
+    },
+    "header": {
+      "type": "component",
+      "component": "shared.header",
+      "repeatable": false
+    },
+    "footer": {
+      "type": "component",
+      "component": "shared.footer",
+      "repeatable": false
+    },
+    "whatsappContact": {
+      "type": "component",
+      "component": "shared.whatsapp-contact",
+      "repeatable": false
     }
   }
 }

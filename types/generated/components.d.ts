@@ -217,6 +217,18 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedWhatsappContact extends Struct.ComponentSchema {
+  collectionName: 'components_shared_whatsapp_contacts';
+  info: {
+    displayName: 'Whatsapp Contact';
+    icon: 'alien';
+  };
+  attributes: {
+    message: Schema.Attribute.Text;
+    phoneNumber: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -238,6 +250,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.whatsapp-contact': SharedWhatsappContact;
     }
   }
 }
